@@ -23,8 +23,6 @@ function Contact({ contact, onDelete }) {
       <div className={css.contactPart}>
         <button
           onClick={(evt) => {
-            evt.preventDefault();
-
             hendleDelete(id);
           }}
         >

@@ -40,6 +40,14 @@ function App() {
     });
   };
 
+  const deleteContact = (id) => {
+    const delatedContact = contacts.filter((contact) => contact.id !== id);
+
+    setContacts(() => {
+      return delatedContact;
+    });
+  };
+
   useEffect(() => {
     localStorage.setItem("contactsStorage", JSON.stringify(contacts));
   }, [contacts]);
@@ -56,8 +64,7 @@ function App() {
         <SearchBox search={search} onSearch={setSearch} />
         <ContactList
           visibleContacts={visibleContacts}
-          values={contacts}
-          setContacts={setContacts}
+          deleteContact={deleteContact}
         />
       </div>
     </div>

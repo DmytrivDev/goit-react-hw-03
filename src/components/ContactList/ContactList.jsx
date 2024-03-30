@@ -2,14 +2,7 @@ import Contact from "./Contact/Contact";
 
 import css from "./ContactList.module.scss";
 
-function ContactList({ visibleContacts, values, setContacts }) {
-  const deleteContact = (id) => {
-    const delatedContact = values.filter((contact) => contact.id !== id);
-
-    setContacts(() => {
-      return delatedContact;
-    });
-  };
+function ContactList({ visibleContacts, deleteContact }) {
 
   return (
     <>
